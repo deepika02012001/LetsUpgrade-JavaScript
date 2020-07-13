@@ -1,0 +1,25 @@
+<!--DAY2 ASSIGNMENT 3
+Question:Write a javascript program to display the current date in following format.
+output:mm-dd-yyyy or mm/dd/yyyy or dd-mm-yyyy or dd/mm/yyyy-->
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var d=new Date();
+var dt,m,y;
+dt=d.getDate();
+m=d.getMonth();
+m=m+1;
+y=d.getFullYear();
+function myfunc()
+{
+document.getElementById("demo").innerHTML="DATE:"+dt+"/"+m+"/"+y;
+}
+</script>
+</head>
+<body>
+<p>A PROGRAM TO DIPLAY DATE IN DD/MM/YYYY FORMAT</p>
+<button type="button" onclick="myfunc()">Display</button>
+<p id="demo"></p>
+</body>
+</html>
