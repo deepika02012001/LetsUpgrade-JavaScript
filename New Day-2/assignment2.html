@@ -1,0 +1,150 @@
+<!--Different methods applied on strings and arrays-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>new day2 assignment2</title>
+<style>
+h4{
+color:seagreen;
+}
+</style>
+</head>
+<body>
+<h2 style="color:magenta">String Methods</h2>
+String="Good things come to those who wait"<br>
+<h4>search()-searches the string of specified value and returns the position of match.</h4>
+var pos=str.search("who");<br>
+<p id="i1"></p>
+var pos1=str.search("where");<br>
+<p id="i2"></p>
+<h4>slice()-It extracts a part of a string and returns the extracted part as a new string.It takes two parameters:start position and end position.</h4>
+var res=str.slice(3,12);<br>
+<p id="i3"></p>
+Negative values are given to start slicing from end of string:<br>
+var res1=str.slice(-6,-3);<br>
+<p id="i4"></p>
+If second parameter ommitted, it will print the rest of the string:<br>
+var res2=str.slice(5);<br>
+<p id="i5"></p>
+Similarly negative single parameter to start from end:<br>
+var res3=str.slice(-7);<br>
+<p id="i6"></p>
+<h4>substring()-It extracts a part of a string and returns the extracted part as a new string.It does not accept negative indexing.</h4>
+var tmp=str.substring(4,11);<br>
+<p id="i7"></p>
+<h4>substr()-It extracts a part of a string and returns the extracted part as a new string.It takes two parameters.Second parameter specifies the length of extracted part.</h4>
+var n=str.substr(3,5);<br>
+<p id="i8"></p>
+If second parameter ommitted, it will print the rest of the string:<br>
+var n1=str.substr(3);<br>
+<p id="i9"></p>
+If first parameter is negative , position counts from end of string:<br>
+var n2=str.substr(-3);<br>
+<p id="i10"></p>
+<h4>replace()-replaces a specified value by another value in string.It replaces only the first match.It is case sensitive.</h4>
+var p1=str.replace("wait","work hard");<br>
+<p id="i11"></p>
+<h4>concat()-joins two or more strings</h4>
+var newstr="hi";<br>
+var newstr1="hello";<br>
+var newstr2=newstr.concat(" ",newstr1);<br>
+<p id="i12"></p>
+<h4>trim()-removes whitespace from both sides of string</h4>
+var s="       hi      ";<br>
+var s1=s.trim();<br>
+<p id="i13"></p>
+<h4>charCodeAt()-returns unicode of character at specified index in a string</h4>
+var st="hello all";<br>
+var st1=st.charCodeAt(4);<br>
+<p id="i14"></p>
+<h4>Access property at an index</h4>
+var sp="Good";<br>
+var sp1=sp[2];<br>
+<p id="i15"></p>
+<h2 style="color:magenta">Array Methods</h2>
+var flowers=['rose','lotus','sunflower','hibiscus','lily'];
+<h4>toString()-converts array to string of array values seperated by comma.</h4>
+flowers.toString();
+<p id="a1"></p>
+<h4>join()-joins all the array elements by a specified seperator.</h4>
+flowers.join(" * ");
+<p id="a2"></p>
+<h4>changing array elements using index</h4>
+flowers[1]="tulip";
+<p id="a3"></p>
+<h4>length property-to append new element to array</h4>
+flowers[flowers.length]="jasmine";
+<p id="a4"></p>
+<h4>delete-delete array elements</h4>
+delete flowers[2];
+<p id="a5"></p>
+<h4>splice()-add new items to array.First parameter defines position where new element should be added.second parameter tells how many elements should be removed.Rest of them define new elements to be added.</h4>
+flowers.splice(1,2,"marigold","daisy");
+<p id="a6"></p>
+<h4>splice()-to remove element.First parameter defines position where new element should be added.second parameter tells how many elements should be removed.</h4>
+flowers.splice(0,1);
+<p id="a7"></p>
+<h4>sort()-sort based on alphabets</h4>
+flowers.sort();
+<p id="a8"></p>
+<h4>reverse()-reverses the array</h4>
+flowers.reverse();
+<p id="a9"></p>
+
+<script>
+var str="Good things come to those who wait";
+var pos=str.search("who");
+document.getElementById("i1").innerHTML="Output:"+pos;
+var pos1=str.search("where");
+document.getElementById("i2").innerHTML="Output:"+pos1;
+var res=str.slice(3,12);
+document.getElementById("i3").innerHTML="Output:"+res;
+var res1=str.slice(-6,-3);
+document.getElementById("i4").innerHTML="Output:"+res1;
+var res2=str.slice(5);
+document.getElementById("i5").innerHTML="Output:"+res2;
+var res3=str.slice(-7);
+document.getElementById("i6").innerHTML="Output:"+res3;
+var tmp=str.substring(4,11);
+document.getElementById("i7").innerHTML="Output:"+tmp;
+var n=str.substr(3,5);
+document.getElementById("i8").innerHTML="Output:"+n;
+var n1=str.substr(3);
+document.getElementById("i9").innerHTML="Output:"+n1;
+var n2=str.substr(3);
+document.getElementById("i10").innerHTML="Output:"+n2;
+var p1=str.replace("wait","work hard");
+document.getElementById("i11").innerHTML="Output:"+p1;
+var newstr="hi";
+var newstr1="hello";
+var newstr2=newstr.concat(" ",newstr1);
+document.getElementById("i12").innerHTML="Output:"+newstr2;
+var s="       hi      ";
+var s1=s.trim();
+document.getElementById("i13").innerHTML="Output:"+s1;
+var st="hello all";
+var st1=st.charCodeAt(4);
+document.getElementById("i14").innerHTML="Output:"+st1;
+var sp="Good";
+var sp1=sp[2];
+document.getElementById("i15").innerHTML="Output:"+sp1;
+var flowers=['rose','lotus','sunflower','hibiscus','lily'];
+document.getElementById("a1").innerHTML="Output:"+flowers.toString();
+document.getElementById("a2").innerHTML="Output:"+flowers.join(" * ");
+flowers[1]="tulip";
+document.getElementById("a3").innerHTML="Output:"+flowers.toString();
+flowers[flowers.length]="jasmine";
+document.getElementById("a4").innerHTML="Output:"+flowers.toString();
+delete flowers[2];
+document.getElementById("a5").innerHTML="Output:"+flowers.toString();
+flowers.splice(1,2,"marigold","daisy");
+document.getElementById("a6").innerHTML="Output:"+flowers.toString();
+flowers.splice(0,1);
+document.getElementById("a7").innerHTML="Output:"+flowers.toString();
+flowers.sort();
+document.getElementById("a8").innerHTML="Output:"+flowers.toString();
+flowers.reverse();
+document.getElementById("a9").innerHTML="Output:"+flowers.toString();
+</script>
+</body>
+</html>

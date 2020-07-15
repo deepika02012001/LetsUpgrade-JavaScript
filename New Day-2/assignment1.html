@@ -1,0 +1,25 @@
+<!--To take input from user and display it on console-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>new day2 assignment1</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+/*age=prompt("What is your age?");
+console.log("Age="+age);*/
+var age;
+age=prompt("What is your age?");
+if(confirm("Is your age "+age+"?"))
+{
+document.getElementById("demo").innerHTML="check console!";
+console.log("Age="+age);
+}
+else
+{
+document.getElementById("demo").innerHTML="You entered a wrong age!";
+}
+</script>
+</body>
+</html>
