@@ -1,0 +1,26 @@
+<!--check odd or even-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>day3 assignment1</title>
+<body>
+<h2 style="color:red">To check if a number is odd or even</h2>
+<p id="demo"></p>
+<script>
+function oddeven(num){
+if(num%2==0)
+{
+document.getElementById("demo").innerHTML="check console!";
+console.log("The number entered is "+num+" and the Number is even");
+}
+else
+{
+document.getElementById("demo").innerHTML="check console!";
+console.log("The number entered is "+num+" and the Number is odd");
+}
+}
+var num=+window.prompt("Enter a number",0);
+oddeven(num);
+</script>
+</body>
+</html>

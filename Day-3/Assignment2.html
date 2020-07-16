@@ -1,0 +1,15 @@
+<!--take os name and version from user and log it into console-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>day3 assignment1</title>
+<body>
+<p id="demo"></p>
+<script>
+var name=window.prompt("Enter your OS name and version seperated by space",'Android 9');
+var tmp=name.split(" ");
+document.getElementById("demo").innerHTML="check console!";
+console.log("The OS name is "+tmp[0]+" and version is "+tmp[1]);
+</script>
+</body>
+</html>
