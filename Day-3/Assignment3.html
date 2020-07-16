@@ -1,0 +1,83 @@
+<!--take marks as input from user and grade accordingly-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>day3 assignment1</title>
+<style type="text/css">
+h4{color:blue;}
+</style>
+<script>
+var mark=+window.prompt("Enter your marks:",0);
+</script>
+</head>
+<body>
+<h2 style="color:seagreen">Grade:</h2>
+<h4>Using conditional statements:</h4>
+<p id="demo"></p>
+<h5>check console!</h5>
+<h4>Using ternary operator:</h4>
+<p id="demo1"></p>
+<button type="button" value="Display Grade" onclick="tern()">Display Grade</button>
+<h4>Using switch case:</h4>
+<p id="demo2"></p>
+<button type="button" value="Display Grade" onclick="switchcase()">Display Grade</button>
+<h5>check console!</h5>
+<script>
+if(mark>85 && mark<=100)
+{
+document.getElementById("demo").innerHTML="Marks are "+mark+" and grade is A";
+console.log("Marks are "+mark+" and grade is A");
+}
+else if(mark>70 && mark<=85)
+{
+document.getElementById("demo").innerHTML="Marks are "+mark+" and grade is B";
+console.log("Marks are "+mark+" and grade is B");
+}
+else if(mark>55 && mark<=70)
+{
+document.getElementById("demo").innerHTML="Marks are "+mark+" and grade is C";
+console.log("Marks are "+mark+" and grade is C");
+}
+else if(mark>40 && mark<=55)
+{
+document.getElementById("demo").innerHTML="Marks are "+mark+" and grade is D";
+console.log("Marks are "+mark+" and grade is D");
+}
+else
+{
+document.getElementById("demo").innerHTML="Marks are "+mark+" and grade is F";
+console.log("Marks are "+mark+" and grade is F");
+}
+function tern()
+{
+(mark>85 && mark<=100)?document.getElementById("demo1").innerHTML="Marks are "+mark+" and grade is A":(mark>70 && mark<=85)?document.getElementById("demo1").innerHTML="Marks are "+mark+" and grade is B":(mark>55 && mark<=70)?document.getElementById("demo1").innerHTML="Marks are "+mark+" and grade is C":(mark>40 && mark<=55)?document.getElementById("demo1").innerHTML="Marks are "+mark+" and grade is D":document.getElementById("demo1").innerHTML="Marks are "+mark+" and grade is F";
+}
+function switchcase()
+{
+switch(true)
+{
+    case (mark>85 && mark<=100):
+         document.getElementById("demo2").innerHTML="Marks are "+mark+" and grade is A";
+         console.log("Marks are "+mark+" and grade is A");
+         break;
+    case (mark>70 && mark<=85):
+         document.getElementById("demo2").innerHTML="Marks are "+mark+" and grade is B";
+         console.log("Marks are "+mark+" and grade is B");
+         break;
+    case (mark>55 && mark<=70):
+         document.getElementById("demo2").innerHTML="Marks are "+mark+" and grade is C";
+         console.log("Marks are "+mark+" and grade is C");
+         break;
+    case (mark>40 && mark<=55):
+         document.getElementById("demo2").innerHTML="Marks are "+mark+" and grade is D";
+         console.log("Marks are "+mark+" and grade is D");
+         break;
+    default:  
+         document.getElementById("demo2").innerHTML="Marks are "+mark+" and grade is F";
+         console.log("Marks are "+mark+" and grade is F");
+         break;
+}
+}
+</script>
+</body>
+</html>
