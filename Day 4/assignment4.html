@@ -1,0 +1,88 @@
+<!--Make a Calculator in Javascript which can do operations as Addition, Subtraction, Multiplication, Division, Square root, Percentage.-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+button:hover{
+color:magenta;
+}
+</style>
+</head>
+<body>
+<h3 style="color:seagreen">Calculator in Javascript which can do operations as Addition, Subtraction, Multiplication, Division, Square root, Percentage.</h4>
+<h4 style="color:seagreen">select the operation you want to perform</h4>
+<form name="calculator">
+<table>
+<tr>
+<td><button type="button" id="b1" value="Addition" onclick="Addition()">Addition</button></td>
+<td><button type="button" id="b1" value="Subtraction" onclick="Subtraction()">Subtraction</button></td>
+</tr>
+<tr>
+<td><button type="button" id="b1" value="Multiplication" onclick="Multiplication()">Multiplication</button></td>
+<td><button type="button" id="b1" value="Division" onclick="Division()">Division</button></td>
+</tr>
+<tr>
+<td><button type="button" id="b1" value="Square_Root" onclick="Square_Root()">Square Root</button></td>
+<td><button type="button" id="b1" value="Percentage" onclick="Percentage()">Percentage</button></td> 
+</tr>
+</table>
+<br><b>Result:<p id="demo" style="color:blue"></b></p>
+<h5>check console!</h5>
+<script>
+function Addition(){
+var num1=+window.prompt("Enter first number");
+var num2=+window.prompt("Enter second number");
+var result=num1+num2;
+document.getElementById("demo").innerHTML=result;
+console.log(`The result of addition of ${num1} and ${num2} i.e. ${num1}+${num2} is ${result}`);
+}
+function Subtraction(){
+var num1=+window.prompt("Enter first number");
+var num2=+window.prompt("Enter second number");
+var result=num1-num2;
+document.getElementById("demo").innerHTML=result;
+console.log(`The result of subtraction of ${num1} and ${num2} i.e. ${num1}-${num2} is ${result}`);
+}
+function Multiplication(){
+var num1=+window.prompt("Enter first number");
+var num2=+window.prompt("Enter second number");
+var result=num1*num2;
+document.getElementById("demo").innerHTML=result;
+console.log(`The result of multiplication of ${num1} and ${num2} i.e. ${num1}*${num2} is ${result}`);
+}
+function Division(){
+var num1=+window.prompt("Enter first number");
+var num2=+window.prompt("Enter second number");
+var result=num1/num2;
+document.getElementById("demo").innerHTML=result;
+console.log(`The result of divison of ${num1} and ${num2} i.e. ${num1}/${num2} is ${result}`);
+}
+function Square_Root(){
+var num1=+window.prompt("Enter number");
+var result=Math.sqrt(num1);
+document.getElementById("demo").innerHTML=result;
+console.log(`The result of square root of ${num1} is ${result}`);
+}
+function Percentage(){
+var total=+window.prompt("Number of subjects");
+var marks;
+marks=Array(marks);
+for(var i=0;i<total;i++)
+{
+marks[i]=+window.prompt("Enter mark "+(i+1)+" out of 100");
+}
+var sum=0;
+console.log(`Marks:`);
+for(var x=0;x<marks.length;x++){
+console.log(marks[x]);
+sum+=marks[x];
+}
+total=total*100;
+var percent=(sum/total)*100;
+document.getElementById("demo").innerHTML=percent+"%";
+console.log(`Total : ${sum} for ${total}`);
+console.log(`Percentage : ${percent}%`);
+}
+</script>
+</body
+</html>

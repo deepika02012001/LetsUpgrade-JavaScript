@@ -1,0 +1,23 @@
+<!--Replace Function Expressions with arrow functions in the code below:
+function ask(question,yes,no){
+ if(confirm(question)) yes()
+ else no();
+}
+ask(
+ "Do you agree?",
+ function() { alert("You agreed."); },
+ function() { alert("You cancelled the execution.");
+);-->
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h4 style="color:seagreen"></h4> 
+<h5>check console!</h5>
+<script>
+const ask=(question,yes,no)=>{if(confirm(question)){yes();} else{no();}};
+ask("Do you agree?",function() { alert("You agreed."); },function() { alert("You cancelled the execution.")});
+</script>
+</body
+</html>
