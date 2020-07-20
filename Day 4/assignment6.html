@@ -1,0 +1,27 @@
+<!--Rewrite the function using '?' or '||' 
+Write a loop which prompts for a number greater than 100. If the visitor enters another number � ask them to input again. 
+The loop must ask for a number until either the visitor enters a number greater than 100 or cancels the input/enters an empty line. 
+Here we can assume that the visitor only inputs numbers. There�s no need to implement a special handling for a non-numeric input in this task. -->
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h4 style="color:seagreen"></h4> 
+<h5>check console!</h5>
+<script>
+while(1){
+var num=window.prompt("Enter a number greater than 100");
+if(num===0)
+{
+continue;
+}
+if(num>100 || num=='' || num==undefined)
+{
+console.log("loop has ended");
+break;
+}
+}
+</script>
+</body
+</html>
