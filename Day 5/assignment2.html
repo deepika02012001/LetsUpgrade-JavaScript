@@ -1,0 +1,102 @@
+<!--Create a Class User with properties as name, age & email. 
+He can login and logout 
+Create another class Moderator which has all the features of User, plus additional functionality to Add coins and remove coins. 
+Create one more class Admin which has all the features of Moderator plus additional features like add a Course and delete a particular course for a user.  -->
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h3 style="color:seagreen">Create a Class User with properties as name, age & email. 
+He can login and logout 
+Create another class Moderator which has all the features of User, plus additional functionality to Add coins and remove coins. 
+Create one more class Admin which has all the features of Moderator plus additional features like add a Course and delete a particular course for a user. </h3>
+<h4>check console!!</h4>
+<script>
+var i=0;
+var users=[1000];
+class User{
+    constructor(name,age,email){
+          this.name=name;
+          this.age=age;
+          this.email=email;
+          this.coins=0;
+          this.course=[];
+          this.role='';
+          users[i++]=this;
+    }
+    login(){
+          console.log(`${this.name} has logged in`);
+          return this;
+    }
+    logout(){
+          console.log(`${this.name} has logged out`);
+          return this;
+    }
+    static display(k){
+          console.log(users[k]);
+    }
+}
+class Moderator extends User{
+    constructor(name,age,email,role){
+          super(name,age,email);
+          this.role='Moderator';
+    }
+    addCoins(user){
+          user.coins++;
+          console.log(`Moderator ${this.name} added coin to ${user.name} .The user now has ${user.coins} coins(s) in account`);
+    }
+    deleteCoins(user){
+          user.coins--;
+          console.log(`Moderator ${this.name} deleted coin from ${user.name} .The user now has ${user.coins} coin(s) in account`);
+    }
+    deleteUser(user){
+          users=users.filter(u=>{return u.email!=user.email;});
+    }
+}
+class Admin extends Moderator{
+    constructor(name,age,email,role){
+          super(name,age,email);
+          this.role='Admin';
+    }
+    addCourse(user,Course){
+          user.course.push(Course);
+          console.log(` Admin ${this.name} added ${Course} to ${user.name}`);
+    }
+    deleteCourse(user){
+          var del=user.course.shift();
+          console.log(` Admin ${this.name} deleted ${del} to ${user.name}`);
+    }
+}
+var user1=new User('Aman Kumar',27,'aman@gmail.com');
+var user2=new User('Shiv chaturvedi',22,'shiv@gmail.com');
+var user3=new User('Ankita krishnan',24,'ankitak@gmail.com');
+var mod1=new Moderator('Ritesh sharma',26,'ritesh@gmail.com');
+var mod2=new Moderator('Shree hegde',25,'shreehegde@gmail.com');
+var admin1=new Admin('Viraat verma',26,'virat@gmail.com');
+var admin2=new Admin('Ajay bhardwaj',25,'ajay@gmail.com');
+console.log(users);
+user1.login().logout();
+user2.login().logout();
+user3.login().logout();
+console.log("users:");
+for(var j=0;j<users.length;j++){
+console.log(User.display(j));
+}
+mod1.addCoins(user1);
+mod1.addCoins(user2);
+mod1.addCoins(user3);
+mod2.deleteCoins(user3);
+mod2.deleteUser(user2);
+admin1.addCourse(user1,'JavaScript');
+admin2.addCourse(user1,'Python');
+admin2.addCourse(user1,'AI');
+admin1.deleteCourse(user1);
+console.log("After all actions<br>:");
+console.log("users:");
+for(var j=0;j<users.length;j++){
+console.log(User.display(j));
+}
+</script>
+</body>
+</html>
