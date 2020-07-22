@@ -1,0 +1,29 @@
+<!--Write a program that will display the multiplication table of a number on the webpage in a proper format. Take the input from the user. 
+Input - 5 
+Output - 5 x 1 = 5 
+         5 x 2 = 10  
+         and so on… -->
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<h3 style="color:seagreen">Multiplication table of a number</h3>
+<div id="demo"></div>
+<script>
+var i=0;
+var text="<table>";
+while(1){
+var n=+window.prompt("Enter a number for which you want the multiplication table",0);
+if(n>=0){
+for(i=1;i<=10;i++)
+{
+text+="<tr><td>"+n+" x "+i+" = "+(n*i)+"</td></tr>";
+}
+document.getElementById("demo").innerHTML+=text+"</table>";
+break;
+}
+}
+</script>
+</body>
+</html>
