@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="styles1.css">
+<style>
+#b1{
+font-weight:italics;
+background-image:linear-gradient(to top left,blue,green);
+font-size:30px;
+font-family:cursive;
+display:inline-block;
+padding:10px;
+text-align:center;
+margin:10px 30px;
+border:2px solid seagreen;
+cursor:pointer;
+box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#b1:hover{
+background-image:linear-gradient(to bottom left,red,yellow);
+box-shadow:0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.30);
+transform:translateY(8px);
+-ms-transform;
+translate(-50%,-50%);
+}
+#b1:active{
+background-image:radial-gradient(blue,purple);
+}
+</style>
+</head>
+<body>
+<nav class="controls">
+			<a href="#" class="button" onClick="stopwatch.start();">Start</a>
+			<a href="#" class="button" onClick="stopwatch.lap();">Lap</a>
+			<a href="#" class="button" onClick="stopwatch.stop();">Stop</a>
+			<a href="#" class="button" onClick="stopwatch.restart();">Restart</a>
+			<a href="#" class="button" onClick="stopwatch.clear();">Clear Laps</a>
+                        <button type="button" id="b1" value="Home" onclick="window.close()">Home</button>
+		</nav>
+		<div class="stopwatch"></div>
+		<ul class="results"></ul>
+<script type="text/javascript" src="scripts1.js">
+</script>
+</body>
+</html>

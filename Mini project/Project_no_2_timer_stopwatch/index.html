@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body,html{
+text-align:center;
+height:100%;
+width:100%;
+}
+body{
+background-color:#ddd;
+}
+
+.mains{
+border:5px solid green;
+width:500px;
+height:400px;
+align:center;
+margin-left:400px;
+margin-right:400px;
+margin-top:100px;
+border-style:outset;
+}
+
+button,#p1{
+font-weight:italics;
+background-image:linear-gradient(to top left,blue,green);
+font-size:30px;
+font-family:cursive;
+display:inline-block;
+padding:10px;
+text-align:center;
+margin:10px 30px;
+border:2px solid seagreen;
+cursor:pointer;
+box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+button:hover,#p1:hover{
+background-image:linear-gradient(to bottom left,red,yellow);
+box-shadow:0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.30);
+transform:translateY(8px);
+-ms-transform;
+translate(-50%,-50%);
+}
+button:active{
+background-image:radial-gradient(blue,purple);
+}
+</style>
+</head>
+<body>
+<div class="mains" style="align:center">
+<h2>CHOOSE</h2>
+<button type="button" style="align:center" value="stopwatch" onclick="win1()" target="_new">Stopwatch</button>
+<button type="button" style="align:center" value="timer" onclick="win2()" target="_new">Timer</button>
+<br>
+<br>
+<br>
+<p id="p1"></p>
+</div>
+<script>
+function win1(){
+window.open("stopwatch.html");
+}
+function win2(){
+window.open("timer.html");
+}
+var newp=document.getElementById("p1");
+changeTime();
+function changeTime(){
+var date=new Date();
+var time=date.toLocaleTimeString();
+var dates=date.getDate();
+var month=date.getMonth();
+var days=date.getDay();
+var arr1=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+var arr2=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sept','Oct','Nov','Dec'];
+month=arr2[month];
+days=arr1[days];
+newp.innerHTML=time+"<br>"+days+" , "+month+" "+dates;
+}
+setInterval(changeTime,1000);
+</script>
+</body>
+</html>

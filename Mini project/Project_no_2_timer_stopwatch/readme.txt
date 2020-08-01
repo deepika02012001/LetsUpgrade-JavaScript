@@ -1,0 +1,1 @@
+Start with index.html which is the main source file i.e open the index.html in browser and all other files run in index.html
